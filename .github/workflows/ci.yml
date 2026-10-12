@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [staging, main]
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  verificar:
+    name: verificar
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+
+  origen-promocion:
+    name: origen-promocion
+    if: github.base_ref == 'main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Solo se promociona a producción desde staging
+        env:
+          RAMA_ORIGEN: ${{ github.head_ref }}
+        run: |
+          if [ "$RAMA_ORIGEN" != "staging" ]; then
+            echo "Los PR contra main deben venir de staging (llega desde '$RAMA_ORIGEN')."
+            echo "Abre el PR contra staging y espera a la promoción."
+            exit 1
+          fi
+          echo "PR de promoción staging → main correcto."

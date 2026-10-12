@@ -1,0 +1,16 @@
+---
+layout: base.njk
+titulo: Noticias
+descripcion: Novedades fiscales y laborales explicadas de forma sencilla por el equipo de Asesoría Demo.
+permalink: /noticias/
+---
+<h1>Noticias</h1>
+<ul class="noticias">
+  {%- for noticia in collections.noticias %}
+  <li>
+    <a href="{{ noticia.url }}">{{ noticia.data.titulo }}</a>
+    <time datetime="{{ noticia.date | fechaIso }}">{{ noticia.date | fechaLarga }}</time>
+    <p>{{ noticia.data.descripcion }}</p>
+  </li>
+  {%- endfor %}
+</ul>

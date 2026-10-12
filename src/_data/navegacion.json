@@ -1,0 +1,6 @@
+[
+  { "texto": "Inicio", "url": "/" },
+  { "texto": "Quiénes somos", "url": "/quienes-somos/" },
+  { "texto": "Noticias", "url": "/noticias/" },
+  { "texto": "Contacto", "url": "/contacto/" }
+]

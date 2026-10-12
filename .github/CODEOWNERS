@@ -1,0 +1,13 @@
+# Equipo web: revisa por defecto todos los cambios.
+*                               @asesoria-demo/web
+
+# Páginas legales: solo las puede cambiar el responsable legal.
+/src/contenido/aviso-legal.md   @asesoria-demo/legal
+/src/contenido/privacidad.md    @asesoria-demo/legal
+
+# Configuración, flujos de trabajo y reglas del repositorio: mantenedores.
+/.github/                       @asesoria-demo/mantenedores
+/eleventy.config.js             @asesoria-demo/mantenedores
+/package.json                   @asesoria-demo/mantenedores
+/package-lock.json              @asesoria-demo/mantenedores
+/AGENTS.md                      @asesoria-demo/mantenedores

@@ -1,0 +1,32 @@
+name: Desplegar
+
+on:
+  push:
+    branches: [staging, main]
+
+concurrency:
+  group: desplegar-${{ github.ref_name }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  desplegar:
+    name: desplegar-${{ github.ref_name == 'main' && 'produccion' || 'staging' }}
+    runs-on: ubuntu-latest
+    environment: ${{ github.ref_name == 'main' && 'produccion' || 'staging' }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Despliegue simulado
+        env:
+          DESTINO: ${{ github.ref_name == 'main' && 'https://www.asesoria-demo.example' || 'https://staging.asesoria-demo.example' }}
+        run: |
+          echo "SIMULACIÓN: se publicaría _site ($(find _site -name '*.html' | wc -l | tr -d ' ') páginas) en $DESTINO"
+          echo "SIMULACIÓN: commit ${GITHUB_SHA::7}; no se usa ningún secreto ni cuenta externa"

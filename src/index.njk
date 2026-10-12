@@ -1,0 +1,18 @@
+---
+layout: base.njk
+titulo: Inicio
+descripcion: Asesoría Demo te ayuda con impuestos, nóminas y contabilidad para que te centres en tu negocio.
+---
+<section class="portada">
+  <h1>Tu asesoría de confianza</h1>
+  <p>Ayudamos a autónomos y pequeñas empresas con sus impuestos, nóminas y contabilidad desde hace más de quince años.</p>
+  <p><a class="boton" href="/contacto/">Pide una primera consulta gratuita</a></p>
+</section>
+<section>
+  <h2>Últimas noticias</h2>
+  <ul class="noticias">
+    {%- for noticia in collections.noticias | primeros(3) %}
+    <li><a href="{{ noticia.url }}">{{ noticia.data.titulo }}</a> <time datetime="{{ noticia.date | fechaIso }}">{{ noticia.date | fechaLarga }}</time></li>
+    {%- endfor %}
+  </ul>
+</section>

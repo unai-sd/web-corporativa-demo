@@ -1,0 +1,9 @@
+---
+layout: base.njk
+---
+<article>
+  <h1>{{ titulo }}</h1>
+  <p class="fecha"><time datetime="{{ page.date | fechaIso }}">{{ page.date | fechaLarga }}</time></p>
+  {{ content | safe }}
+  <p><a href="/noticias/">Volver a noticias</a></p>
+</article>

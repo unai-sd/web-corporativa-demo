@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if titulo and page.url != "/" %}{{ titulo }} · {% endif %}{{ sitio.nombre }}</title>
+    <meta name="description" content="{{ descripcion or sitio.descripcion }}">
+    <link rel="canonical" href="{{ sitio.url }}{{ page.url }}">
+    <link rel="stylesheet" href="/recursos/estilos.css">
+  </head>
+  <body>
+    <header class="cabecera">
+      <a class="marca" href="/"><img src="/recursos/logo.svg" alt="{{ sitio.nombre }}, ir a la página de inicio" width="160" height="40"></a>
+      <nav aria-label="Principal">
+        <ul>
+          {%- for enlace in navegacion %}
+          <li><a href="{{ enlace.url }}"{% if enlace.url == page.url %} aria-current="page"{% endif %}>{{ enlace.texto }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+    </header>
+    <main id="contenido">
+      {{ content | safe }}
+    </main>
+    <footer class="pie">
+      <p>{{ sitio.nombre }} · {{ sitio.direccion }} · <a href="mailto:{{ sitio.correo }}">{{ sitio.correo }}</a></p>
+      <p><a href="/aviso-legal/">Aviso legal</a> · <a href="/privacidad/">Privacidad</a></p>
+    </footer>
+  </body>
+</html>
