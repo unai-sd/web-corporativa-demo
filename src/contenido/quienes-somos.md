@@ -14,4 +14,4 @@ Desde 2010 acompañamos a autónomos y pequeñas empresas para que cumplan sus o
 2. **Te proponemos** un plan y una tarifa cerrada.
 3. **Te avisamos** antes de cada plazo para que nunca se te pase nada.
 
-Lee las últimas [noticias](/noticias/) para estar al día.
+Consulta nuestros [servicios](/servicios/) o lee las últimas [noticias](/noticias/).
