@@ -1,5 +1,7 @@
 :root { --tinta: #1f2a37; --fondo: #ffffff; --acento: #0b5cad; }
 body { margin: 0; font-family: system-ui, sans-serif; color: var(--tinta); background: var(--fondo); line-height: 1.6; }
+.saltar { position: absolute; left: -9999px; }
+.saltar:focus { left: 16px; top: 16px; background: var(--fondo); padding: 8px; }
 .cabecera, .pie { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; padding: 16px 24px; }
 .cabecera ul { list-style: none; display: flex; gap: 16px; margin: 0; padding: 0; }
 a { color: var(--acento); }
