@@ -9,6 +9,7 @@ describe('páginas generadas', () => {
     const rutas = paginas.map((p) => p.ruta);
     for (const esperada of [
       'index.html',
+      'servicios/index.html',
       'quienes-somos/index.html',
       'contacto/index.html',
       'noticias/index.html',
