@@ -13,6 +13,10 @@ Asesoría Demo, S.L. (sociedad ficticia). Contacto: {{ sitio.correo }}.
 
 Usamos tus datos solo para responder a tus consultas y, si eres cliente, para prestarte nuestros servicios.
 
+## Conservación
+
+Conservamos los datos de las consultas durante un año y los de clientes mientras dure la relación y los plazos legales posteriores.
+
 ## Derechos
 
 Puedes acceder, rectificar o suprimir tus datos, y oponerte a su tratamiento, escribiendo a {{ sitio.correo }}.
