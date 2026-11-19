@@ -11,4 +11,6 @@ descripcion: Contacta con Asesoría Demo por teléfono, correo electrónico o vi
 
 De lunes a jueves, de 9:00 a 14:00 y de 16:00 a 18:30. Viernes, de 9:00 a 14:00.
 
+Del 24 de diciembre al 6 de enero abrimos solo por las mañanas, de 9:00 a 14:00.
+
 Al escribirnos aceptas nuestra [política de privacidad](/privacidad/).
